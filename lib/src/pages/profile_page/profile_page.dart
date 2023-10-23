@@ -26,7 +26,48 @@ class _ProfilePageState extends ConsumerState<ProfilePage> {
                 ),
               ),
             ),
-            const Expanded(child: AvatarProfileImage()),
+            SizedBox(
+              height: 180,
+              child: AvatarProfileImage(
+                userFullName: "Mathew Adam",
+                userEmail: "mathew@email.com",
+                onEditProfile: () {},
+                userImage: const AssetImage("assets/images/user.jpg"),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      height: 80,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.red),
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Container(
+                      height: 80,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.red),
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Container(
+                      height: 80,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.red),
+                    ),
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
