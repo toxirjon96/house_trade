@@ -12,3 +12,8 @@ export 'package:house_trade/src/constants/theme_config.dart';
 export 'package:house_trade/src/pages/profile_page/widget/p_appbar_button.dart';
 export 'package:house_trade/src/pages/profile_page/widget/p_avatar_profile_image.dart';
 export 'package:house_trade/src/pages/profile_page/widget/p_row_info_item.dart';
+export 'package:house_trade/src/pages/profile_page/widget/p_row_buttons.dart';
+export 'package:house_trade/src/pages/profile_page/widget/p_custom_text_button.dart';
+
+//provider
+export 'package:house_trade/src/provider/profile_state_notifier.dart';

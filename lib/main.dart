@@ -1,7 +1,9 @@
 import 'package:house_trade/house_trade_library.dart';
 
 void main() {
-  runApp(const HouseTrade());
+  runApp(
+    const ProviderScope(child: HouseTrade()),
+  );
 }
 
 class HouseTrade extends StatelessWidget {
