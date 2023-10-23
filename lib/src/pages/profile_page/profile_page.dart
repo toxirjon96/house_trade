@@ -48,7 +48,7 @@ class _ProfilePageState extends ConsumerState<ProfilePage> {
               ),
             ),
             const SizedBox(height: 15),
-            const RowButtons(),
+            const Expanded(child: RowButtons()),
           ],
         ),
       ),
