@@ -32,7 +32,7 @@ class _ProfilePageState extends ConsumerState<ProfilePage> {
                 userFullName: "Mathew Adam",
                 userEmail: "mathew@email.com",
                 onEditProfile: () {},
-                userImage: const AssetImage("assets/images/user.jpg"),
+                userImage: const AssetImage("assets/images/user.png"),
               ),
             ),
             const Padding(

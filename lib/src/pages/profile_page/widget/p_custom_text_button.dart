@@ -18,7 +18,7 @@ class CustomTextButton extends StatelessWidget {
       style: isActive
           ? TextButton.styleFrom(
               padding: const EdgeInsets.symmetric(
-                horizontal: 30,
+                horizontal: 28,
               ),
               backgroundColor: Theme.of(context).colorScheme.background,
               side: BorderSide(
