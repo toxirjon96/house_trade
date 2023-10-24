@@ -18,6 +18,8 @@ export 'package:house_trade/src/pages/profile_page/widget/p_custom_menu_button.d
 export 'package:house_trade/src/pages/profile_page/widget/p_house_info_item.dart';
 export 'package:house_trade/src/pages/profile_page/widget/p_custom_sliver_app_bar.dart';
 export 'package:house_trade/src/pages/profile_page/widget/p_transaction.dart';
+export 'package:house_trade/src/pages/profile_page/widget/p_listings.dart';
+export 'package:house_trade/src/pages/profile_page/widget/p_house_info_sub_item.dart';
 
 //provider
 export 'package:house_trade/src/provider/profile_state_notifier.dart';

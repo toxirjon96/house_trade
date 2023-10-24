@@ -1,5 +1,4 @@
 import 'package:house_trade/house_trade_library.dart';
-import 'package:house_trade/src/pages/profile_page/widget/p_listings.dart';
 
 class RowButtons extends ConsumerWidget {
   const RowButtons({super.key});

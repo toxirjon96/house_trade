@@ -7,7 +7,7 @@ class Listings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverPadding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
       sliver: SliverList(
         delegate: SliverChildListDelegate(
           [
@@ -46,7 +46,7 @@ class Listings extends StatelessWidget {
                   ),
                   bottom: Row(
                     children: [
-                      SubItem(
+                      HouseInfoSubItem(
                         icon: Icon(
                           Icons.star,
                           color:
@@ -55,7 +55,7 @@ class Listings extends StatelessWidget {
                         ),
                         title: "4.9",
                       ),
-                      SubItem(
+                      HouseInfoSubItem(
                         icon: Icon(
                           Icons.location_on,
                           color:
@@ -101,7 +101,7 @@ class Listings extends StatelessWidget {
                   title: "Fairview Apartment",
                   bottom: Row(
                     children: [
-                      SubItem(
+                      HouseInfoSubItem(
                         icon: Icon(
                           Icons.star,
                           color:
@@ -110,7 +110,7 @@ class Listings extends StatelessWidget {
                         ),
                         title: "4.9",
                       ),
-                      SubItem(
+                      HouseInfoSubItem(
                         icon: Icon(
                           Icons.location_on,
                           color:
@@ -163,7 +163,7 @@ class Listings extends StatelessWidget {
                   ),
                   bottom: Row(
                     children: [
-                      SubItem(
+                      HouseInfoSubItem(
                         icon: Icon(
                           Icons.star,
                           color:
@@ -172,7 +172,7 @@ class Listings extends StatelessWidget {
                         ),
                         title: "4.9",
                       ),
-                      SubItem(
+                      HouseInfoSubItem(
                         icon: Icon(
                           Icons.location_on,
                           color:
@@ -218,7 +218,7 @@ class Listings extends StatelessWidget {
                   ),
                   bottom: Row(
                     children: [
-                      SubItem(
+                      HouseInfoSubItem(
                         icon: Icon(
                           Icons.star,
                           color:
@@ -227,7 +227,7 @@ class Listings extends StatelessWidget {
                         ),
                         title: "4.9",
                       ),
-                      SubItem(
+                      HouseInfoSubItem(
                         icon: Icon(
                           Icons.location_on,
                           color:
@@ -244,34 +244,6 @@ class Listings extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class SubItem extends StatelessWidget {
-  const SubItem({
-    required this.title,
-    required this.icon,
-    super.key,
-  });
-
-  final Icon icon;
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        icon,
-        const SizedBox(width: 2),
-        Text(
-          title,
-          style: Theme.of(context).textTheme.labelMedium!.copyWith(
-                color: Theme.of(context).colorScheme.onPrimaryContainer,
-                overflow: TextOverflow.ellipsis,
-              ),
-        )
-      ],
     );
   }
 }

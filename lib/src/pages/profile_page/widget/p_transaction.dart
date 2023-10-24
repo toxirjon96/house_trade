@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:house_trade/house_trade_library.dart';
 
-
-class Transaction extends StatelessWidget{
+class Transaction extends StatelessWidget {
   const Transaction({super.key});
 
   @override
@@ -23,16 +22,13 @@ class Transaction extends StatelessWidget{
                   title: "Wings Tower",
                   imageInfo: Text(
                     "Rent",
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleMedium!
-                        .copyWith(
-                      color: Theme.of(context).colorScheme.background,
-                    ),
+                    style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                          color: Theme.of(context).colorScheme.background,
+                        ),
                   ),
                   bottom: const Row(
                     children: [
-                      SubItem(
+                      HouseInfoSubItem(
                         icon: Icon(
                           Icons.watch_later,
                           color: Colors.lightGreen,
@@ -53,16 +49,13 @@ class Transaction extends StatelessWidget{
                   title: "Wings Tower",
                   imageInfo: Text(
                     "Rent",
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleMedium!
-                        .copyWith(
-                      color: Theme.of(context).colorScheme.background,
-                    ),
+                    style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                          color: Theme.of(context).colorScheme.background,
+                        ),
                   ),
                   bottom: const Row(
                     children: [
-                      SubItem(
+                      HouseInfoSubItem(
                         icon: Icon(
                           Icons.watch_later,
                           color: Colors.lightGreen,
@@ -87,16 +80,13 @@ class Transaction extends StatelessWidget{
                   title: "Wings Tower",
                   imageInfo: Text(
                     "Rent",
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleMedium!
-                        .copyWith(
-                      color: Theme.of(context).colorScheme.background,
-                    ),
+                    style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                          color: Theme.of(context).colorScheme.background,
+                        ),
                   ),
                   bottom: const Row(
                     children: [
-                      SubItem(
+                      HouseInfoSubItem(
                         icon: Icon(
                           Icons.watch_later,
                           color: Colors.lightGreen,
@@ -117,16 +107,13 @@ class Transaction extends StatelessWidget{
                   title: "Wings Tower",
                   imageInfo: Text(
                     "Rent",
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleMedium!
-                        .copyWith(
-                      color: Theme.of(context).colorScheme.background,
-                    ),
+                    style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                          color: Theme.of(context).colorScheme.background,
+                        ),
                   ),
                   bottom: const Row(
                     children: [
-                      SubItem(
+                      HouseInfoSubItem(
                         icon: Icon(
                           Icons.watch_later,
                           color: Colors.lightGreen,
@@ -142,33 +129,6 @@ class Transaction extends StatelessWidget{
           ],
         ),
       ),
-    );
-  }
-
-}
-class SubItem extends StatelessWidget {
-  const SubItem({
-    required this.title,
-    required this.icon,
-    super.key,
-  });
-
-  final Icon icon;
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        icon,
-        const SizedBox(width: 5),
-        Text(
-          title,
-          style: Theme.of(context).textTheme.labelMedium!.copyWith(
-            color: Theme.of(context).colorScheme.onPrimaryContainer,
-          ),
-        )
-      ],
     );
   }
 }
