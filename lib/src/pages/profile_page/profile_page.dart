@@ -73,7 +73,13 @@ class ProfilePage extends ConsumerWidget {
                   RowInfoItem(
                     name: "Reviews",
                     count: "28",
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (ctx) => const AllReviews(),
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),
