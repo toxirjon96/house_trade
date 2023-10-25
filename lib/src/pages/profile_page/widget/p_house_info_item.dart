@@ -23,7 +23,7 @@ class HouseInfoItem extends StatelessWidget {
     return Expanded(
       child: Container(
         height: 260,
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(40),
           color: Theme.of(context).colorScheme.secondaryContainer,
@@ -63,7 +63,7 @@ class HouseInfoItem extends StatelessWidget {
                   Align(
                     alignment: const Alignment(1, 0.7),
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 50, right: 5),
+                      padding: const EdgeInsets.only(left: 40, right: 5),
                       child: Container(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 20, vertical: 8),
@@ -98,7 +98,7 @@ class HouseInfoItem extends StatelessWidget {
             Expanded(
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

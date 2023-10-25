@@ -14,21 +14,18 @@ class TopAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          leftWidget,
-          Text(
-            title,
-            style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                  color: Theme.of(context).colorScheme.onPrimaryContainer,
-                ),
-          ),
-          rightWidget,
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        leftWidget,
+        Text(
+          title,
+          style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                color: Theme.of(context).colorScheme.onPrimaryContainer,
+              ),
+        ),
+        rightWidget,
+      ],
     );
   }
 }

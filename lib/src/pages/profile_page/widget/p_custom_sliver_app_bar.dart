@@ -17,59 +17,55 @@ class CustomSliverAppBar extends ConsumerWidget {
       expandedHeight: 110,
       backgroundColor: Theme.of(context).colorScheme.background,
       actions: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
-          child: Container(
-            width: width - 60,
-            padding: const EdgeInsets.symmetric(horizontal: 30),
-            decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.secondaryContainer,
-              borderRadius: BorderRadius.circular(40),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    CustomTextButton(
-                      text: "Transaction",
-                      onPressed: () {
-                        ref
-                            .read(profileProvider.notifier)
-                            .setActiveAction("transaction");
-                      },
-                      isActive: activeAction == 'transaction',
-                    ),
-                    CustomTextButton(
-                      text: "Listings",
-                      onPressed: () {
-                        ref
-                            .read(profileProvider.notifier)
-                            .setActiveAction("listings");
-                      },
-                      isActive: activeAction == 'listings',
-                    ),
-                    CustomTextButton(
-                      text: "Sold",
-                      onPressed: () {
-                        ref
-                            .read(profileProvider.notifier)
-                            .setActiveAction("sold");
-                      },
-                      isActive: activeAction == 'sold',
-                    ),
-                  ],
-                ),
-              ],
-            ),
+        Container(
+          width: width - 60,
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.secondaryContainer,
+            borderRadius: BorderRadius.circular(40),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CustomTextButton(
+                    text: "Transaction",
+                    onPressed: () {
+                      ref
+                          .read(profileProvider.notifier)
+                          .setActiveAction("transaction");
+                    },
+                    isActive: activeAction == 'transaction',
+                  ),
+                  CustomTextButton(
+                    text: "Listings",
+                    onPressed: () {
+                      ref
+                          .read(profileProvider.notifier)
+                          .setActiveAction("listings");
+                    },
+                    isActive: activeAction == 'listings',
+                  ),
+                  CustomTextButton(
+                    text: "Sold",
+                    onPressed: () {
+                      ref
+                          .read(profileProvider.notifier)
+                          .setActiveAction("sold");
+                    },
+                    isActive: activeAction == 'sold',
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ],
       flexibleSpace: Container(
         height: 110,
         alignment: Alignment.bottomCenter,
-        padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
