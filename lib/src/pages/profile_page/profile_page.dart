@@ -1,4 +1,5 @@
 import 'package:house_trade/house_trade_library.dart';
+import 'package:house_trade/src/pages/profile_page/widget/p_edit_profile.dart';
 
 class ProfilePage extends ConsumerStatefulWidget {
   const ProfilePage({super.key});
@@ -31,7 +32,13 @@ class _ProfilePageState extends ConsumerState<ProfilePage> {
               child: AvatarProfileImage(
                 userFullName: "Mathew Adam",
                 userEmail: "mathew@email.com",
-                onEditProfile: () {},
+                onEditProfile: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (ctx) => const EditProfile(),
+                    ),
+                  );
+                },
                 userImage: const AssetImage("assets/images/user.png"),
               ),
             ),
