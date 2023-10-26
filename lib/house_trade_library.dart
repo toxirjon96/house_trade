@@ -25,6 +25,14 @@ export 'package:house_trade/src/pages/profile_page/widget/p_all_reviews.dart';
 export 'package:house_trade/src/pages/profile_page/widget/p_star_item.dart';
 export 'package:house_trade/src/pages/profile_page/widget/p_review_owner.dart';
 export 'package:house_trade/src/pages/profile_page/widget/p_review_sliver.dart';
+export 'package:house_trade/src/pages/profile_page/widget/p_review_item.dart';
+
+export 'package:house_trade/src/pages/transaction_detail/t_transaction_detail_page.dart';
+export 'package:house_trade/src/pages/transaction_detail/widget/t_detail_item.dart';
+export 'package:house_trade/src/pages/transaction_detail/widget/t_transaction_info.dart';
+export 'package:house_trade/src/pages/transaction_detail/widget/t_row_info.dart';
+export 'package:house_trade/src/pages/transaction_detail/widget/t_detail_info.dart';
+export 'package:house_trade/src/pages/transaction_detail/widget/t_payment_detail.dart';
 
 //provider
 export 'package:house_trade/src/provider/profile_state_notifier.dart';

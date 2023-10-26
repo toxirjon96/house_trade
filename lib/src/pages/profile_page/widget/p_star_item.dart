@@ -16,7 +16,7 @@ class StarItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final bColor = isActive
         ? Theme.of(context).colorScheme.onSecondaryContainer
-        : Theme.of(context).colorScheme.primaryContainer;
+        : Theme.of(context).colorScheme.primaryContainer.withOpacity(0.5);
     final tColor = isActive
         ? Theme.of(context).colorScheme.background
         : Theme.of(context).colorScheme.onSecondaryContainer;

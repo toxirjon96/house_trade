@@ -14,6 +14,7 @@ class Listings extends StatelessWidget {
             Row(
               children: [
                 HouseInfoItem(
+                  onTap: () {},
                   image: const AssetImage("assets/images/li-image-1.png"),
                   rightIcon: IconButton(
                     onPressed: () {},
@@ -21,7 +22,10 @@ class Listings extends StatelessWidget {
                   ),
                   leftIcon: IconButton(
                     onPressed: () {},
-                    icon: const Icon(Icons.edit),
+                    icon: Icon(
+                      Icons.edit,
+                      color: Theme.of(context).colorScheme.primaryContainer,
+                    ),
                   ),
                   title: "Fairview Apartment",
                   imageInfo: Row(
@@ -69,6 +73,7 @@ class Listings extends StatelessWidget {
                 ),
                 const SizedBox(width: 5),
                 HouseInfoItem(
+                  onTap: () {},
                   image: const AssetImage("assets/images/li-image-2.png"),
                   rightIcon: IconButton(
                     onPressed: () {},
@@ -76,7 +81,10 @@ class Listings extends StatelessWidget {
                   ),
                   leftIcon: IconButton(
                     onPressed: () {},
-                    icon: const Icon(Icons.edit),
+                    icon: Icon(
+                      Icons.edit,
+                      color: Theme.of(context).colorScheme.primaryContainer,
+                    ),
                   ),
                   imageInfo: Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
@@ -128,6 +136,7 @@ class Listings extends StatelessWidget {
             Row(
               children: [
                 HouseInfoItem(
+                  onTap: () {},
                   image: const AssetImage("assets/images/li-image-3.png"),
                   rightIcon: IconButton(
                     onPressed: () {},
@@ -135,9 +144,9 @@ class Listings extends StatelessWidget {
                   ),
                   leftIcon: IconButton(
                     onPressed: () {},
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.edit,
-                      size: 15,
+                      color: Theme.of(context).colorScheme.primaryContainer,
                     ),
                   ),
                   title: "Fairview Apartment",
@@ -186,6 +195,7 @@ class Listings extends StatelessWidget {
                 ),
                 const SizedBox(width: 5),
                 HouseInfoItem(
+                  onTap: () {},
                   image: const AssetImage("assets/images/li-image-4.png"),
                   rightIcon: IconButton(
                     onPressed: () {},
@@ -193,7 +203,10 @@ class Listings extends StatelessWidget {
                   ),
                   leftIcon: IconButton(
                     onPressed: () {},
-                    icon: const Icon(Icons.edit),
+                    icon: Icon(
+                      Icons.edit,
+                      color: Theme.of(context).colorScheme.primaryContainer,
+                    ),
                   ),
                   title: "Fairview Apartment",
                   imageInfo: Row(

@@ -29,10 +29,10 @@ class AllReviews extends ConsumerWidget {
               ),
               const SizedBox(height: 10),
               const ReviewOwner(
-                userImage: AssetImage("assets/images/user.png"),
+                userImage: AssetImage("assets/images/user-2.png"),
                 name: "Mandella",
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
               SizedBox(
                 height: 50,
                 child: ListView(
@@ -56,7 +56,7 @@ class AllReviews extends ConsumerWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 30),
               Align(
                 alignment: Alignment.topLeft,
                 child: Text(

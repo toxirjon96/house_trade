@@ -19,7 +19,7 @@ class ReviewOwner extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         color:
-            Theme.of(context).colorScheme.onSecondaryContainer.withOpacity(0.2),
+            Theme.of(context).colorScheme.primaryContainer.withOpacity(0.5),
         borderRadius: BorderRadius.circular(30),
       ),
       child: ListTile(
@@ -34,6 +34,7 @@ class ReviewOwner extends StatelessWidget {
             Text(
               name,
               style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                fontSize: 16,
                     color: Theme.of(context).colorScheme.onPrimaryContainer,
                   ),
             ),
