@@ -1,10 +1,11 @@
 import 'package:house_trade/house_trade_library.dart';
 
-class AllReviews extends StatelessWidget {
+class AllReviews extends ConsumerWidget {
   const AllReviews({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    String activeStar = ref.watch(starProvider);
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -27,53 +28,46 @@ class AllReviews extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              Container(
-                height: 80,
-                width: double.infinity,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: Theme.of(context)
-                      .colorScheme
-                      .onSecondaryContainer
-                      .withOpacity(0.2),
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: ListTile(
-                  leading: const CircleAvatar(
-                    radius: 40, // Image radius
-                    backgroundImage: AssetImage("assets/images/user.png"),
-                  ),
-                  title: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Mandella",
-                        style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                              color: Theme.of(context)
-                                  .colorScheme
-                                  .onPrimaryContainer,
-                            ),
-                      ),
-                      const SizedBox(height: 2),
-                      Text(
-                        "Owner",
-                        style: Theme.of(context).textTheme.labelSmall!.copyWith(
-                              color: Theme.of(context)
-                                  .colorScheme
-                                  .onPrimaryContainer,
-                            ),
-                      ),
-                    ],
-                  ),
-                  trailing: IconButton(
-                    icon: const Icon(
-                      Icons.chat,
+              const ReviewOwner(
+                userImage: AssetImage("assets/images/user.png"),
+                name: "Mandella",
+              ),
+              const SizedBox(height: 10),
+              SizedBox(
+                height: 50,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    StarItem(
+                      title: "All",
+                      isActive: activeStar == 'all',
+                      onTap: () {
+                        ref.read(starProvider.notifier).setStarOrder("all");
+                      },
                     ),
-                    onPressed: () {},
-                  ),
+                    for (int i = 1; i < 5; i++)
+                      StarItem(
+                        title: "$i",
+                        isActive: activeStar == '$i',
+                        onTap: () {
+                          ref.read(starProvider.notifier).setStarOrder("$i");
+                        },
+                      ),
+                  ],
                 ),
               ),
+              const SizedBox(height: 10),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "User reviews",
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                        color: Theme.of(context).colorScheme.onPrimaryContainer,
+                      ),
+                ),
+              ),
+              const SizedBox(height: 10),
+              const ReviewSliver(),
             ],
           ),
         ),

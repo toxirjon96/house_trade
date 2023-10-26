@@ -22,6 +22,10 @@ export 'package:house_trade/src/pages/profile_page/widget/p_listings.dart';
 export 'package:house_trade/src/pages/profile_page/widget/p_house_info_sub_item.dart';
 export 'package:house_trade/src/pages/profile_page/widget/p_edit_profile.dart';
 export 'package:house_trade/src/pages/profile_page/widget/p_all_reviews.dart';
+export 'package:house_trade/src/pages/profile_page/widget/p_star_item.dart';
+export 'package:house_trade/src/pages/profile_page/widget/p_review_owner.dart';
+export 'package:house_trade/src/pages/profile_page/widget/p_review_sliver.dart';
 
 //provider
 export 'package:house_trade/src/provider/profile_state_notifier.dart';
+export 'package:house_trade/src/provider/star_state_notifier.dart';
