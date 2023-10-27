@@ -13,11 +13,11 @@ class ProfilePage extends ConsumerWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
+          padding: const EdgeInsets.only(left: 30, right: 30, top: 10),
           child: Column(
             children: [
               TopAppBar(
-                leftWidget: const SizedBox(width: 60, height: 60),
+                leftWidget: const SizedBox(width: 30, height: 30),
                 title: "Profile",
                 rightWidget: AppBarButton(
                   onPressed: () {},
@@ -26,6 +26,7 @@ class ProfilePage extends ConsumerWidget {
                     size: 30,
                     color: Theme.of(context).colorScheme.onPrimaryContainer,
                   ),
+                  size: 50,
                 ),
               ),
               SizedBox(

@@ -24,10 +24,18 @@ class _AddReviewState extends ConsumerState<AddReview> {
       imageFileList.remove(item);
     });
   }
-  void onSubmit(){
-    showModalBottomSheet(context: context, builder: (ctx){
-      return const BottomModal();
-    });
+
+  void onSubmit() {
+    showModalBottomSheet(
+        context: context,
+        builder: (ctx) {
+          return const BottomModal(
+            boldText: "Successfully ",
+            normalText: "submitted your review",
+            subText: "Lorem ipsum dolor sit amet, consectetur.",
+            buttonText: "Continue Exploring",
+          );
+        });
   }
 
   @override

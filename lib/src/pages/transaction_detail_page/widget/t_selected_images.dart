@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:house_trade/house_trade_library.dart';
 
 class SelectedImages extends StatelessWidget {

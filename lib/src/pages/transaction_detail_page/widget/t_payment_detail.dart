@@ -18,6 +18,7 @@ class PaymentDetail extends StatelessWidget {
     final totalPrice =
         monthPeriod * price - ((monthPeriod * price * discount) / 100);
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           "Payment Detail",

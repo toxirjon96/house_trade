@@ -7,91 +7,91 @@ class Transaction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverPadding(
-      padding: const EdgeInsets.symmetric(vertical: 5),
-      sliver: SliverList(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      sliver: SliverGrid(
         delegate: SliverChildListDelegate(
           [
-            Row(
-              children: [
-                HouseInfoItem(
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (ctx) => const TransactionDetail(
-                          placeName: "Wings Tower",
-                          typeHouse: "rent",
-                          image: AssetImage("assets/images/tr-image-1.png"),
-                        ),
-                      ),
-                    );
-                  },
-                  image: const AssetImage("assets/images/tr-image-1.png"),
-                  rightIcon: IconButton(
-                    onPressed: () {},
-                    icon: const Icon(CupertinoIcons.heart),
+            HouseInfoItem(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (ctx) => const TransactionDetail(
+                      placeName: "Wings Tower",
+                      typeHouse: "rent",
+                      image: AssetImage("assets/images/tr-image-1.png"),
+                    ),
                   ),
-                  title: "Wings Tower",
-                  imageInfo: Text(
-                    "Rent",
-                    style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                          color: Theme.of(context).colorScheme.background,
-                        ),
+                );
+              },
+              image: const AssetImage("assets/images/tr-image-1.png"),
+              rightIcon: IconButton(
+                onPressed: () {},
+                icon: const Icon(CupertinoIcons.heart),
+              ),
+              title: "Wings Tower",
+              imageInfo: Text(
+                "Rent",
+                style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                      color: Theme.of(context).colorScheme.background,
+                    ),
+              ),
+              bottom: const Row(
+                children: [
+                  HouseInfoSubItem(
+                    icon: Icon(
+                      Icons.watch_later,
+                      color: Colors.lightGreen,
+                      size: 15,
+                    ),
+                    title: "October 24, 2023",
                   ),
-                  bottom: const Row(
-                    children: [
-                      HouseInfoSubItem(
-                        icon: Icon(
-                          Icons.watch_later,
-                          color: Colors.lightGreen,
-                          size: 15,
-                        ),
-                        title: "October 24, 2023",
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(width: 5),
-                HouseInfoItem(
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (ctx) => const TransactionDetail(
-                          placeName: "Bridgeland Modern House",
-                          typeHouse: "rent",
-                          image: AssetImage("assets/images/tr-image-2.png"),
-                        ),
-                      ),
-                    );
-                  },
-                  image: const AssetImage("assets/images/tr-image-2.png"),
-                  rightIcon: IconButton(
-                    onPressed: () {},
-                    icon: const Icon(CupertinoIcons.heart),
-                  ),
-                  title: "Bridgeland Modern House",
-                  imageInfo: Text(
-                    "Rent",
-                    style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                          color: Theme.of(context).colorScheme.background,
-                        ),
-                  ),
-                  bottom: const Row(
-                    children: [
-                      HouseInfoSubItem(
-                        icon: Icon(
-                          Icons.watch_later,
-                          color: Colors.lightGreen,
-                          size: 15,
-                        ),
-                        title: "October 26, 2023",
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
-            const SizedBox(height: 5),
+            HouseInfoItem(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (ctx) => const TransactionDetail(
+                      placeName: "Bridgeland Modern House",
+                      typeHouse: "rent",
+                      image: AssetImage("assets/images/tr-image-2.png"),
+                    ),
+                  ),
+                );
+              },
+              image: const AssetImage("assets/images/tr-image-2.png"),
+              rightIcon: IconButton(
+                onPressed: () {},
+                icon: const Icon(CupertinoIcons.heart),
+              ),
+              title: "Bridgeland Modern House",
+              imageInfo: Text(
+                "Rent",
+                style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                      color: Theme.of(context).colorScheme.background,
+                    ),
+              ),
+              bottom: const Row(
+                children: [
+                  HouseInfoSubItem(
+                    icon: Icon(
+                      Icons.watch_later,
+                      color: Colors.lightGreen,
+                      size: 15,
+                    ),
+                    title: "October 26, 2023",
+                  ),
+                ],
+              ),
+            ),
           ],
+        ),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          mainAxisSpacing: 6,
+          crossAxisSpacing: 6,
+          childAspectRatio: 1 / 1.5,
         ),
       ),
     );

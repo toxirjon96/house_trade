@@ -1,7 +1,18 @@
 import 'package:house_trade/house_trade_library.dart';
 
 class BottomModal extends StatelessWidget {
-  const BottomModal({super.key});
+  const BottomModal({
+    required this.boldText,
+    required this.normalText,
+    required this.subText,
+    required this.buttonText,
+    super.key,
+  });
+
+  final String boldText;
+  final String normalText;
+  final String subText;
+  final String buttonText;
 
   @override
   Widget build(BuildContext context) {
