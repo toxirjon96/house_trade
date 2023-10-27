@@ -50,13 +50,14 @@ class TransactionInfo extends StatelessWidget {
                 children: [
                   Text(
                     placeName,
-                    style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
                           color:
                               Theme.of(context).colorScheme.onPrimaryContainer,
                         ),
                   ),
                   const SizedBox(height: 5),
                   HouseInfoSubItem(
+                    fontSize: 15,
                     icon: Icon(
                       Icons.location_on,
                       color: Theme.of(context).colorScheme.onPrimaryContainer,
