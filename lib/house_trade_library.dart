@@ -36,6 +36,7 @@ export 'package:house_trade/src/pages/transaction_detail/widget/t_row_info.dart'
 export 'package:house_trade/src/pages/transaction_detail/widget/t_detail_info.dart';
 export 'package:house_trade/src/pages/transaction_detail/widget/t_payment_detail.dart';
 export 'package:house_trade/src/pages/transaction_detail/widget/t_custom_submit_button.dart';
+export 'package:house_trade/src/pages/transaction_detail/widget/t_selected_images.dart';
 
 //provider
 export 'package:house_trade/src/provider/profile_state_notifier.dart';

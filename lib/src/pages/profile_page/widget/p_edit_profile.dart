@@ -16,13 +16,14 @@ class EditProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _formKey = GlobalKey();
+    final formKey = GlobalKey();
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
           child: Form(
-            key: _formKey,
+            key: formKey,
             child: Column(
               children: [
                 TopAppBar(

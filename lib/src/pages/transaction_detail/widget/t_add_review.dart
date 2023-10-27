@@ -9,23 +9,27 @@ class AddReview extends ConsumerStatefulWidget {
 
 class _AddReviewState extends ConsumerState<AddReview> {
   final ImagePicker imagePicker = ImagePicker();
-  List<XFile> imageFileList = [];
+  final List<XFile> imageFileList = [];
 
   void pickImages() async {
     final List<XFile> selectedImages = await imagePicker.pickMultiImage();
     if (selectedImages.isNotEmpty) {
       imageFileList.addAll(selectedImages);
     }
-    for (int i = 0; i < imageFileList.length; i++){
-
-    }
     setState(() {});
+  }
+
+  void _removeItem(XFile item) {
+    setState(() {
+      imageFileList.remove(item);
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     double reviewOrder = ref.watch(reviewStarProvider);
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
@@ -52,14 +56,14 @@ class _AddReviewState extends ConsumerState<AddReview> {
                 text: TextSpan(
                   text: 'Hi, how was your ',
                   style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                        fontSize: 36,
+                        fontSize: 32,
                         color: Theme.of(context).colorScheme.onPrimaryContainer,
                       ),
                   children: <TextSpan>[
                     TextSpan(
                       text: 'overall experience?',
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                            fontSize: 36,
+                            fontSize: 32,
                             color: Theme.of(context)
                                 .colorScheme
                                 .onPrimaryContainer,
@@ -133,6 +137,34 @@ class _AddReviewState extends ConsumerState<AddReview> {
                 ),
               ),
               const SizedBox(height: 15),
+              imageFileList.isNotEmpty
+                  ? SizedBox(
+                      height: 220,
+                      child: CustomScrollView(
+                        slivers: [
+                          SliverGrid(
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              mainAxisSpacing: 6,
+                              crossAxisSpacing: 6,
+                              childAspectRatio: 1 / 0.9,
+                            ),
+                            delegate: SliverChildBuilderDelegate(
+                              childCount: imageFileList.length,
+                              (ctx, index) {
+                                return SelectedImages(
+                                  onRemove: _removeItem,
+                                  imageFile: imageFileList[index],
+                                );
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  : const SizedBox.shrink(),
+              const SizedBox(height: 15),
               IconButton(
                 style: IconButton.styleFrom(
                   padding: const EdgeInsets.all(20),
@@ -150,26 +182,6 @@ class _AddReviewState extends ConsumerState<AddReview> {
                   color: Theme.of(context).colorScheme.onPrimaryContainer,
                 ),
               ),
-              imageFileList.isNotEmpty
-                  ? Expanded(
-                      child: CustomScrollView(
-                        slivers: [
-                          SliverGrid(
-                            gridDelegate:
-                                const SliverGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisCount: 2,
-                                    mainAxisSpacing: 10,
-                                    crossAxisSpacing: 10,
-                                    childAspectRatio: 1 / 1.4),
-                            delegate: SliverChildBuilderDelegate(
-                                childCount: imageFileList.length, (ctx, index) {
-                              Text(imageFileList[index].name);
-                            }),
-                          ),
-                        ],
-                      ),
-                    )
-                  : const SizedBox(),
               const Spacer(),
               CustomSubmitButton(
                 text: "Submit",
