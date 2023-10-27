@@ -3,6 +3,7 @@ library house_trade_library;
 //core
 export 'package:flutter/material.dart';
 export 'package:flutter_riverpod/flutter_riverpod.dart';
+export 'package:flutter_svg/flutter_svg.dart';
 
 //pages
 export 'package:house_trade/src/pages/profile_page/profile_page.dart';

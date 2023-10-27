@@ -17,7 +17,7 @@ class TransactionDetail extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -53,7 +53,76 @@ class TransactionDetail extends StatelessWidget {
                           const DetailInfo(),
                           const SizedBox(height: 15),
                           const PaymentDetail(
-                              monthPeriod: 2, price: 220, discount: 30),
+                            monthPeriod: 2,
+                            price: 220,
+                            discount: 30,
+                          ),
+                          const SizedBox(height: 15),
+                          TextFormField(
+                            enabled: false,
+                            style: Theme.of(context)
+                                .textTheme
+                                .labelLarge!
+                                .copyWith(
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onPrimaryContainer,
+                                ),
+                            initialValue: "••••••an@email.com",
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onPrimaryContainer,
+                                ),
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              labelText: 'Payment type',
+                              prefixIcon:
+                                  SvgPicture.asset("assets/icons/paypal.svg"),
+                            ),
+                          ),
+                          const SizedBox(height: 15),
+                          Text(
+                            "Love the estate?",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleLarge!
+                                .copyWith(
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onPrimaryContainer,
+                                ),
+                          ),
+                          const SizedBox(height: 15),
+                          Align(
+                            alignment: Alignment.bottomCenter,
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 20, horizontal: 100),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                                backgroundColor: Colors.lightGreen,
+                                foregroundColor: Colors.white,
+                              ),
+                              onPressed: () {},
+                              child: Text(
+                                "Click here to add review",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .labelLarge!
+                                    .copyWith(
+                                      fontSize: 16,
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .background,
+                                    ),
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),
