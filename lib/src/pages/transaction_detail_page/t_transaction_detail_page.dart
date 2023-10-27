@@ -1,5 +1,4 @@
 import 'package:house_trade/house_trade_library.dart';
-import 'package:house_trade/src/pages/transaction_detail/widget/t_add_review.dart';
 
 class TransactionDetail extends StatelessWidget {
   const TransactionDetail({

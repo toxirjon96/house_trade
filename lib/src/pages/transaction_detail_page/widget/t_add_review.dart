@@ -24,6 +24,11 @@ class _AddReviewState extends ConsumerState<AddReview> {
       imageFileList.remove(item);
     });
   }
+  void onSubmit(){
+    showModalBottomSheet(context: context, builder: (ctx){
+      return const BottomModal();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -185,7 +190,7 @@ class _AddReviewState extends ConsumerState<AddReview> {
               const Spacer(),
               CustomSubmitButton(
                 text: "Submit",
-                onPressed: () {},
+                onPressed: onSubmit,
               ),
             ],
           ),
