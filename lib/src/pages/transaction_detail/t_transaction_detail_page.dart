@@ -1,4 +1,5 @@
 import 'package:house_trade/house_trade_library.dart';
+import 'package:house_trade/src/pages/transaction_detail/widget/t_add_review.dart';
 
 class TransactionDetail extends StatelessWidget {
   const TransactionDetail({
@@ -96,6 +97,7 @@ class TransactionDetail extends StatelessWidget {
                                 ),
                           ),
                           const SizedBox(height: 15),
+
                           Align(
                             alignment: Alignment.bottomCenter,
                             child: ElevatedButton(
@@ -108,7 +110,13 @@ class TransactionDetail extends StatelessWidget {
                                 backgroundColor: Colors.lightGreen,
                                 foregroundColor: Colors.white,
                               ),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (ctx) => const AddReview(),
+                                  ),
+                                );
+                              },
                               child: Text(
                                 "Click here to add review",
                                 style: Theme.of(context)
