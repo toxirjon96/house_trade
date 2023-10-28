@@ -62,14 +62,14 @@ class BottomModal extends StatelessWidget {
           RichText(
             textAlign: TextAlign.center,
             text: TextSpan(
-              text: 'Successfully ',
+              text: boldText,
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     fontSize: 32,
                     color: Theme.of(context).colorScheme.onPrimaryContainer,
                   ),
               children: <TextSpan>[
                 TextSpan(
-                  text: 'submitted your review ',
+                  text: normalText,
                   style: Theme.of(context).textTheme.labelLarge!.copyWith(
                         fontSize: 32,
                         color: Theme.of(context).colorScheme.onPrimaryContainer,
@@ -80,7 +80,7 @@ class BottomModal extends StatelessWidget {
           ),
           const SizedBox(height: 30),
           Text(
-            "Lorem ipsum dolor sit amet, consectetur.",
+            subText,
             style: Theme.of(context).textTheme.labelLarge!.copyWith(
                   fontSize: 16,
                   color: Theme.of(context).colorScheme.onPrimaryContainer,
@@ -88,7 +88,7 @@ class BottomModal extends StatelessWidget {
           ),
           const Spacer(),
           CustomSubmitButton(
-            text: "Continue Exploring",
+            text: buttonText,
             padding: const EdgeInsets.symmetric(
               horizontal: 80,
               vertical: 20,

@@ -38,6 +38,18 @@ class _EditListingPageState extends ConsumerState<EditListingPage> {
       imageFileList.remove(item);
     });
   }
+  void onSubmit() {
+    showModalBottomSheet(
+        context: context,
+        builder: (ctx) {
+          return const BottomModal(
+            boldText: "Your listing just ",
+            normalText: "successfully updated",
+            subText: "Lorem ipsum dolor sit amet, consectetur.",
+            buttonText: "Close",
+          );
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -130,6 +142,10 @@ class _EditListingPageState extends ConsumerState<EditListingPage> {
                           const TotalRooms(),
                           const SizedBox(height: 15),
                           const EnvironmentFacilities(),
+                          CustomSubmitButton(
+                            text: "Update",
+                            onPressed: onSubmit,
+                          ),
                         ],
                       ),
                     ),
