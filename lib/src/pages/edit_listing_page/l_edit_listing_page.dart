@@ -38,14 +38,25 @@ class _EditListingPageState extends ConsumerState<EditListingPage> {
       imageFileList.remove(item);
     });
   }
+
   void onSubmit() {
     showModalBottomSheet(
         context: context,
         builder: (ctx) {
           return const BottomModal(
-            boldText: "Your listing just ",
-            normalText: "successfully updated",
-            subText: "Lorem ipsum dolor sit amet, consectetur.",
+            richTextBuilder: RichTextBuilder(
+              textList: [
+                TextTypeModel(
+                  textType: TextType.normalText,
+                  text: "Your listing just ",
+                ),
+                TextTypeModel(
+                  textType: TextType.boldText,
+                  text: "successfully updated  ",
+                ),
+              ],
+            ),
+            subText: "Lorem ipsum dolor sit amet, consecrate.",
             buttonText: "Close",
           );
         });

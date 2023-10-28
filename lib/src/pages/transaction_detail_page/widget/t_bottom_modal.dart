@@ -1,18 +1,17 @@
 import 'package:house_trade/house_trade_library.dart';
+import 'package:house_trade/src/pages/add_estate_page/widget/e_rich_text_builder.dart';
 
 class BottomModal extends StatelessWidget {
   const BottomModal({
-    required this.boldText,
-    required this.normalText,
     required this.subText,
     required this.buttonText,
+    required this.richTextBuilder,
     super.key,
   });
 
-  final String boldText;
-  final String normalText;
   final String subText;
   final String buttonText;
+  final RichTextBuilder richTextBuilder;
 
   @override
   Widget build(BuildContext context) {
@@ -59,25 +58,7 @@ class BottomModal extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 60),
-          RichText(
-            textAlign: TextAlign.center,
-            text: TextSpan(
-              text: boldText,
-              style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                    fontSize: 32,
-                    color: Theme.of(context).colorScheme.onPrimaryContainer,
-                  ),
-              children: <TextSpan>[
-                TextSpan(
-                  text: normalText,
-                  style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                        fontSize: 32,
-                        color: Theme.of(context).colorScheme.onPrimaryContainer,
-                      ),
-                ),
-              ],
-            ),
-          ),
+          richTextBuilder,
           const SizedBox(height: 30),
           Text(
             subText,

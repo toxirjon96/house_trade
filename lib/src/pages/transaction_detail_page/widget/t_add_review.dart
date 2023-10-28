@@ -30,8 +30,18 @@ class _AddReviewState extends ConsumerState<AddReview> {
         context: context,
         builder: (ctx) {
           return const BottomModal(
-            boldText: "Successfully ",
-            normalText: "submitted your review",
+            richTextBuilder: RichTextBuilder(
+              textList: [
+                TextTypeModel(
+                  textType: TextType.boldText,
+                  text: "Successfully ",
+                ),
+                TextTypeModel(
+                  textType: TextType.normalText,
+                  text: "submitted your review",
+                ),
+              ],
+            ),
             subText: "Lorem ipsum dolor sit amet, consectetur.",
             buttonText: "Continue Exploring",
           );

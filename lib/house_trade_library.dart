@@ -7,6 +7,9 @@ export 'package:flutter_svg/flutter_svg.dart';
 export 'package:image_picker/image_picker.dart';
 export 'dart:io';
 
+//model
+export 'package:house_trade/src/pages/add_estate_page/model/e_text_type_model.dart';
+
 //pages
 export 'package:house_trade/src/pages/profile_page/profile_page.dart';
 
@@ -54,6 +57,9 @@ export 'package:house_trade/src/pages/edit_listing_page/widget/l_custom_counter_
 export 'package:house_trade/src/pages/edit_listing_page/widget/l_property_features.dart';
 export 'package:house_trade/src/pages/edit_listing_page/widget/l_total_rooms.dart';
 export 'package:house_trade/src/pages/edit_listing_page/widget/l_environment_facilities.dart';
+
+export 'package:house_trade/src/pages/add_estate_page/widget/e_rich_text_builder.dart';
+
 //provider
 export 'package:house_trade/src/provider/profile_state_notifier.dart';
 export 'package:house_trade/src/provider/star_state_notifier.dart';
