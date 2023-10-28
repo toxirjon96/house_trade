@@ -1,17 +1,20 @@
 import 'package:house_trade/house_trade_library.dart';
-import 'package:house_trade/src/pages/add_estate_page/widget/e_rich_text_builder.dart';
 
 class BottomModal extends StatelessWidget {
   const BottomModal({
     required this.subText,
-    required this.buttonText,
+    required this.bottom,
     required this.richTextBuilder,
+    required this.iconData,
+    required this.seedColor,
     super.key,
   });
 
   final String subText;
-  final String buttonText;
+  final Color seedColor;
+  final Widget bottom;
   final RichTextBuilder richTextBuilder;
+  final IconData iconData;
 
   @override
   Widget build(BuildContext context) {
@@ -32,27 +35,36 @@ class BottomModal extends StatelessWidget {
           Container(
             height: 60,
             width: 60,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
-                    color: Color(0xFF94C150), spreadRadius: 40, blurRadius: 80),
+                  color: seedColor.withOpacity(0.1),
+                  spreadRadius: 40,
+                  blurRadius: 80,
+                ),
                 BoxShadow(
-                    color: Color(0xFF94C150), spreadRadius: 20, blurRadius: 40),
+                  color: seedColor.withOpacity(0.6),
+                  spreadRadius: 20,
+                  blurRadius: 40,
+                ),
                 BoxShadow(
-                    color: Color(0xFF4F6D5E), spreadRadius: 15, blurRadius: 20),
+                  color: seedColor,
+                  spreadRadius: 15,
+                  blurRadius: 20,
+                ),
               ],
               shape: BoxShape.circle,
               gradient: LinearGradient(
                 begin: Alignment.bottomRight,
                 end: Alignment.topLeft,
                 colors: [
-                  Color(0xFF94C150),
-                  Color(0xFF4F6D5E),
+                  seedColor.withGreen(150),
+                  seedColor,
                 ],
               ),
             ),
-            child: const Icon(
-              Icons.done,
+            child: Icon(
+              iconData,
               size: 30,
               color: Colors.white,
             ),
@@ -68,17 +80,7 @@ class BottomModal extends StatelessWidget {
                 ),
           ),
           const Spacer(),
-          CustomSubmitButton(
-            text: buttonText,
-            padding: const EdgeInsets.symmetric(
-              horizontal: 80,
-              vertical: 20,
-            ),
-            fontSize: 18,
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          )
+          bottom,
         ],
       ),
     );

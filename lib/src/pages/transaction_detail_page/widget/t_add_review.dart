@@ -29,8 +29,20 @@ class _AddReviewState extends ConsumerState<AddReview> {
     showModalBottomSheet(
         context: context,
         builder: (ctx) {
-          return const BottomModal(
-            richTextBuilder: RichTextBuilder(
+          return BottomModal(
+            subText: "Lorem ipsum dolor sit amet, consecrate.",
+            bottom: CustomSubmitButton(
+              text: "Continue Exploring",
+              padding: const EdgeInsets.symmetric(
+                horizontal: 80,
+                vertical: 20,
+              ),
+              fontSize: 18,
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            richTextBuilder: const RichTextBuilder(
               textList: [
                 TextTypeModel(
                   textType: TextType.boldText,
@@ -42,8 +54,8 @@ class _AddReviewState extends ConsumerState<AddReview> {
                 ),
               ],
             ),
-            subText: "Lorem ipsum dolor sit amet, consectetur.",
-            buttonText: "Continue Exploring",
+            iconData: Icons.done,
+            seedColor: const Color(0xFF8BC83F),
           );
         });
   }

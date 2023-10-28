@@ -75,7 +75,33 @@ class CustomSliverAppBar extends ConsumerWidget {
                     color: Theme.of(context).colorScheme.onPrimaryContainer,
                   ),
             ),
-            CustomMenuButton(onTap: () {})
+            const Spacer(),
+            CustomMenuButton(onTap: () {}),
+            const SizedBox(width: 10),
+            activeAction == 'listings'
+                ? Container(
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.onPrimaryContainer,
+                      shape: BoxShape.circle,
+                    ),
+                    child: IconButton(
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (ctx) => const AddEstatePage(),
+                          ),
+                        );
+                      },
+                      icon: Icon(
+                        Icons.add,
+                        size: 20,
+                        color: Theme.of(context).colorScheme.background,
+                      ),
+                    ),
+                  )
+                : const SizedBox.shrink(),
           ],
         ),
       ),

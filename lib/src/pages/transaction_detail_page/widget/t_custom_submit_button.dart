@@ -8,6 +8,8 @@ class CustomSubmitButton extends StatelessWidget {
     this.padding = const EdgeInsets.symmetric(vertical: 20, horizontal: 100),
     this.borderRadius = 15,
     this.fontSize = 16,
+    this.backgroundColor = Colors.lightGreen,
+    this.foregroundColor = Colors.white,
     super.key,
   });
 
@@ -17,6 +19,8 @@ class CustomSubmitButton extends StatelessWidget {
   final EdgeInsetsGeometry padding;
   final double borderRadius;
   final double fontSize;
+  final Color backgroundColor;
+  final Color foregroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -28,15 +32,15 @@ class CustomSubmitButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(borderRadius),
           ),
-          backgroundColor: Colors.lightGreen,
-          foregroundColor: Colors.white,
+          backgroundColor: backgroundColor,
+          foregroundColor: foregroundColor,
         ),
         onPressed: onPressed,
         child: Text(
           text,
           style: Theme.of(context).textTheme.labelLarge!.copyWith(
                 fontSize: fontSize,
-                color: Theme.of(context).colorScheme.background,
+                color: foregroundColor,
               ),
         ),
       ),

@@ -1,26 +1,31 @@
 import 'package:house_trade/house_trade_library.dart';
 
 class LocationInfo extends StatelessWidget {
-  const LocationInfo({super.key});
+  const LocationInfo({
+    this.containerHeight = 290,
+    this.fontSize = 16,
+    this.topFlex = 3,
+    super.key,
+  });
+
+  final double containerHeight;
+  final double fontSize;
+  final int topFlex;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 290,
+      height: containerHeight,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          topFlex == 3 ? Text(
             "Location",
-            style: Theme.of(context)
-                .textTheme
-                .titleLarge!
-                .copyWith(
-              color: Theme.of(context)
-                  .colorScheme
-                  .onPrimaryContainer,
-            ),
-          ),
+            style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  color: Theme.of(context).colorScheme.onPrimaryContainer,
+                ),
+          ) :
+          const SizedBox(),
           const SizedBox(height: 15),
           Row(
             children: [
@@ -48,6 +53,7 @@ class LocationInfo extends StatelessWidget {
                   softWrap: true,
                   style: Theme.of(context).textTheme.labelLarge!.copyWith(
                         overflow: TextOverflow.ellipsis,
+                        fontSize: fontSize,
                         color: Theme.of(context)
                             .colorScheme
                             .onPrimaryContainer
@@ -57,9 +63,9 @@ class LocationInfo extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 10),
+          SizedBox(height: topFlex != 3 ? 20 : 10),
           Container(
-            height: 200,
+            height: containerHeight - 90,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
               border: Border.all(
@@ -69,7 +75,7 @@ class LocationInfo extends StatelessWidget {
             child: Column(
               children: [
                 Expanded(
-                  flex: 3,
+                  flex: topFlex,
                   child: Container(
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.only(
@@ -98,7 +104,7 @@ class LocationInfo extends StatelessWidget {
                           "Select on the map",
                           style:
                               Theme.of(context).textTheme.labelLarge!.copyWith(
-                                    fontSize: 16,
+                                    fontSize: fontSize,
                                     color: Theme.of(context)
                                         .colorScheme
                                         .onPrimaryContainer,

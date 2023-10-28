@@ -43,8 +43,20 @@ class _EditListingPageState extends ConsumerState<EditListingPage> {
     showModalBottomSheet(
         context: context,
         builder: (ctx) {
-          return const BottomModal(
-            richTextBuilder: RichTextBuilder(
+          return BottomModal(
+            subText: "Lorem ipsum dolor sit amet, consecrate.",
+            bottom: CustomSubmitButton(
+              text: "Close",
+              padding: const EdgeInsets.symmetric(
+                horizontal: 80,
+                vertical: 20,
+              ),
+              fontSize: 18,
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            richTextBuilder: const RichTextBuilder(
               textList: [
                 TextTypeModel(
                   textType: TextType.normalText,
@@ -56,8 +68,8 @@ class _EditListingPageState extends ConsumerState<EditListingPage> {
                 ),
               ],
             ),
-            subText: "Lorem ipsum dolor sit amet, consecrate.",
-            buttonText: "Close",
+            iconData: Icons.done,
+            seedColor: const Color(0xFF8BC83F),
           );
         });
   }
