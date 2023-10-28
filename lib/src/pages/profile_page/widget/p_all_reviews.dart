@@ -9,7 +9,7 @@ class AllReviews extends ConsumerWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
           child: Column(
             children: [
               TopAppBar(

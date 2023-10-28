@@ -1,7 +1,6 @@
 import 'package:house_trade/house_trade_library.dart';
-import 'package:house_trade/src/pages/edit_listing_page/widget/l_listing_type.dart';
 
-class EditListingPage extends StatefulWidget {
+class EditListingPage extends ConsumerStatefulWidget {
   const EditListingPage({
     required this.placeName,
     required this.image,
@@ -18,12 +17,27 @@ class EditListingPage extends StatefulWidget {
   final String location;
 
   @override
-  State<StatefulWidget> createState() => _EditListingPageState();
+  ConsumerState<ConsumerStatefulWidget> createState() =>
+      _EditListingPageState();
 }
 
-class _EditListingPageState extends State<EditListingPage> {
-  bool rent = true;
-  bool sell = true;
+class _EditListingPageState extends ConsumerState<EditListingPage> {
+  final ImagePicker imagePicker = ImagePicker();
+  final List<XFile> imageFileList = [];
+
+  void pickImages() async {
+    final List<XFile> selectedImages = await imagePicker.pickMultiImage();
+    if (selectedImages.isNotEmpty) {
+      imageFileList.addAll(selectedImages);
+    }
+    setState(() {});
+  }
+
+  void _removeItem(XFile item) {
+    setState(() {
+      imageFileList.remove(item);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,23 +65,102 @@ class _EditListingPageState extends State<EditListingPage> {
                 ),
               ),
               const SizedBox(height: 10),
+              ListingInfo(
+                placeName: widget.placeName,
+                image: widget.image,
+                price: widget.price,
+                rate: widget.rate,
+                location: widget.location,
+              ),
+              const SizedBox(height: 10),
               Expanded(
                 child: CustomScrollView(
                   slivers: [
                     SliverList(
                       delegate: SliverChildListDelegate(
                         [
-                          ListingInfo(
-                            placeName: widget.placeName,
-                            image: widget.image,
-                            price: widget.price,
-                            rate: widget.rate,
-                            location: widget.location,
+                          const SizedBox(height: 15),
+                          ListingTitle(
+                            value: widget.placeName,
+                            title: "Listing title",
+                            suffixIconData: Icons.home_filled,
                           ),
                           const SizedBox(height: 15),
-                          ListingTitle(placeName: widget.placeName),
-                          const SizedBox(height: 15),
                           const ListingType(),
+                          const SizedBox(height: 15),
+                          const PropertyCategory(),
+                          const SizedBox(height: 15),
+                          const LocationInfo(),
+                          const SizedBox(height: 10),
+                          Text(
+                            "Listing photos",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleLarge!
+                                .copyWith(
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onPrimaryContainer,
+                                ),
+                          ),
+                          const SizedBox(height: 15),
+                        ],
+                      ),
+                    ),
+                    CustomImagePicker(
+                      imageFileList: imageFileList,
+                      onRemove: _removeItem,
+                      pickImages: pickImages,
+                    ),
+                    SliverList(
+                      delegate: SliverChildListDelegate(
+                        [
+                          const SizedBox(height: 15),
+                          const ListingTitle(
+                            value: "150 000",
+                            title: "Sell Price",
+                            prefixIconData: Icons.attach_money,
+                            suffixIconData: Icons.attach_money,
+                          ),
+                          const SizedBox(height: 15),
+                          ListingTitle(
+                            value: "${widget.price}/}",
+                            title: "Rent Price",
+                            prefixIconData: Icons.attach_money,
+                            suffixIconData: Icons.attach_money,
+                          ),
+                          const SizedBox(height: 10),
+                          Row(
+                            children: [
+                              ToggleButton(
+                                text: ToggleNames.monthly.name,
+                                onPressed: () {
+                                  ref
+                                      .read(toggleProvider.notifier)
+                                      .setToggleState(
+                                          ToggleNames.monthly,
+                                          !ref.watch(toggleProvider)[
+                                              ToggleNames.monthly]!);
+                                },
+                                isActive: ref.watch(
+                                    toggleProvider)[ToggleNames.monthly]!,
+                              ),
+                              const SizedBox(width: 10),
+                              ToggleButton(
+                                text: ToggleNames.yearly.name,
+                                onPressed: () {
+                                  ref
+                                      .read(toggleProvider.notifier)
+                                      .setToggleState(
+                                          ToggleNames.yearly,
+                                          !ref.watch(toggleProvider)[
+                                              ToggleNames.yearly]!);
+                                },
+                                isActive: ref
+                                    .watch(toggleProvider)[ToggleNames.yearly]!,
+                              ),
+                            ],
+                          ),
                         ],
                       ),
                     ),

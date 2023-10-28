@@ -4,11 +4,13 @@ class SelectedImages extends StatelessWidget {
   const SelectedImages({
     required this.imageFile,
     required this.onRemove,
+    this.iconBackgroundColor,
     super.key,
   });
 
   final void Function(XFile item) onRemove;
   final XFile imageFile;
+  final Color? iconBackgroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -37,10 +39,11 @@ class SelectedImages extends StatelessWidget {
               height: 35,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Theme.of(context)
-                    .colorScheme
-                    .onSecondaryContainer
-                    .withOpacity(0.8),
+                color: iconBackgroundColor ??
+                    Theme.of(context)
+                        .colorScheme
+                        .onSecondaryContainer
+                        .withOpacity(0.8),
               ),
               child: IconButton(
                 onPressed: () {
