@@ -50,9 +50,11 @@ export 'package:house_trade/src/pages/edit_listing_page/widget/l_property_catego
 export 'package:house_trade/src/pages/edit_listing_page/widget/l_custom_image_picker.dart';
 export 'package:house_trade/src/pages/edit_listing_page/widget/l_location.dart';
 export 'package:house_trade/src/pages/edit_listing_page/widget/l_rent_price.dart';
+export 'package:house_trade/src/pages/edit_listing_page/widget/l_custom_counter_container.dart';
 
 //provider
 export 'package:house_trade/src/provider/profile_state_notifier.dart';
 export 'package:house_trade/src/provider/star_state_notifier.dart';
 export 'package:house_trade/src/provider/review_start_state_notifier.dart';
 export 'package:house_trade/src/provider/toggle_state_notifier.dart';
+export 'package:house_trade/src/provider/counter_state_notifier.dart';
