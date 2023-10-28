@@ -123,44 +123,7 @@ class _EditListingPageState extends ConsumerState<EditListingPage> {
                             suffixIconData: Icons.attach_money,
                           ),
                           const SizedBox(height: 15),
-                          ListingTitle(
-                            value: "${widget.price}/}",
-                            title: "Rent Price",
-                            prefixIconData: Icons.attach_money,
-                            suffixIconData: Icons.attach_money,
-                          ),
-                          const SizedBox(height: 10),
-                          Row(
-                            children: [
-                              ToggleButton(
-                                text: ToggleNames.monthly.name,
-                                onPressed: () {
-                                  ref
-                                      .read(toggleProvider.notifier)
-                                      .setToggleState(
-                                          ToggleNames.monthly,
-                                          !ref.watch(toggleProvider)[
-                                              ToggleNames.monthly]!);
-                                },
-                                isActive: ref.watch(
-                                    toggleProvider)[ToggleNames.monthly]!,
-                              ),
-                              const SizedBox(width: 10),
-                              ToggleButton(
-                                text: ToggleNames.yearly.name,
-                                onPressed: () {
-                                  ref
-                                      .read(toggleProvider.notifier)
-                                      .setToggleState(
-                                          ToggleNames.yearly,
-                                          !ref.watch(toggleProvider)[
-                                              ToggleNames.yearly]!);
-                                },
-                                isActive: ref
-                                    .watch(toggleProvider)[ToggleNames.yearly]!,
-                              ),
-                            ],
-                          ),
+                          RentPrice(rentPrice: widget.price),
                         ],
                       ),
                     ),

@@ -45,6 +45,16 @@ class ToggleStateNotifier extends StateNotifier<Map<ToggleNames, bool>> {
         ToggleNames.cottage: false,
       };
     }
+
+    if (name == ToggleNames.monthly ||
+        name == ToggleNames.yearly ) {
+      state = {
+        ...state,
+        ToggleNames.monthly: false,
+        ToggleNames.yearly: false,
+      };
+    }
+
     state = {...state, name: status};
   }
 }

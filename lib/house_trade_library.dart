@@ -49,6 +49,7 @@ export 'package:house_trade/src/pages/edit_listing_page/widget/l_listing_type.da
 export 'package:house_trade/src/pages/edit_listing_page/widget/l_property_category.dart';
 export 'package:house_trade/src/pages/edit_listing_page/widget/l_custom_image_picker.dart';
 export 'package:house_trade/src/pages/edit_listing_page/widget/l_location.dart';
+export 'package:house_trade/src/pages/edit_listing_page/widget/l_rent_price.dart';
 
 //provider
 export 'package:house_trade/src/provider/profile_state_notifier.dart';
