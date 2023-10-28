@@ -32,7 +32,7 @@ class ListingTitle extends StatelessWidget {
           const SizedBox(height: 15),
           TextFormField(
             style: Theme.of(context).textTheme.labelLarge!.copyWith(
-              fontSize: valueFontSize,
+                  fontSize: valueFontSize,
                   color: Theme.of(context).colorScheme.onPrimaryContainer,
                 ),
             initialValue: value,
@@ -44,10 +44,12 @@ class ListingTitle extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15),
               ),
               labelText: title,
-              prefixIcon: Icon(
-                prefixIconData,
-                color: Theme.of(context).colorScheme.onPrimaryContainer,
-              ),
+              prefixIcon: prefixIconData == null
+                  ? null
+                  : Icon(
+                      prefixIconData,
+                      color: Theme.of(context).colorScheme.onPrimaryContainer,
+                    ),
               suffixIcon: Icon(
                 suffixIconData,
                 color: Theme.of(context).colorScheme.onPrimaryContainer,

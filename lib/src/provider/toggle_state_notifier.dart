@@ -7,9 +7,13 @@ enum ToggleNames {
   apartment("Apartment"),
   hotel("Hotel"),
   villa("Villa"),
+  cottage("Cottage"),
   monthly("Monthly"),
   yearly("Yearly"),
-  cottage("Cottage");
+  lessFour("< 4"),
+  four("4"),
+  six("6"),
+  moreSix(">6");
 
   final String name;
 
@@ -28,6 +32,10 @@ class ToggleStateNotifier extends StateNotifier<Map<ToggleNames, bool>> {
           ToggleNames.cottage: false,
           ToggleNames.monthly: true,
           ToggleNames.yearly: false,
+          ToggleNames.lessFour: false,
+          ToggleNames.four: false,
+          ToggleNames.six: false,
+          ToggleNames.moreSix: false,
         });
 
   void setToggleState(ToggleNames name, bool status) {
@@ -46,8 +54,20 @@ class ToggleStateNotifier extends StateNotifier<Map<ToggleNames, bool>> {
       };
     }
 
-    if (name == ToggleNames.monthly ||
-        name == ToggleNames.yearly ) {
+    if (name == ToggleNames.lessFour ||
+        name == ToggleNames.four ||
+        name == ToggleNames.six ||
+        name == ToggleNames.moreSix) {
+      state = {
+        ...state,
+        ToggleNames.lessFour: false,
+        ToggleNames.four: false,
+        ToggleNames.six: false,
+        ToggleNames.moreSix: false,
+      };
+    }
+
+    if (name == ToggleNames.monthly || name == ToggleNames.yearly) {
       state = {
         ...state,
         ToggleNames.monthly: false,

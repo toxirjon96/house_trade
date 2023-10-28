@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:house_trade/house_trade_library.dart';
-import 'package:house_trade/src/pages/edit_listing_page/widget/l_property_features.dart';
 
 class EditListingPage extends ConsumerStatefulWidget {
   const EditListingPage({
@@ -128,6 +126,8 @@ class _EditListingPageState extends ConsumerState<EditListingPage> {
                           RentPrice(rentPrice: widget.price),
                           const SizedBox(height: 15),
                           const PropertyFeatures(),
+                          const SizedBox(height: 15),
+                          const TotalRooms()
                         ],
                       ),
                     ),

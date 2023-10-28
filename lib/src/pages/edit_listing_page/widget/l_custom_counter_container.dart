@@ -26,7 +26,7 @@ class CustomCounterContainer extends ConsumerWidget {
         children: [
           Text(
             name.name,
-            style: Theme.of(context).textTheme.titleLarge!.copyWith(
+            style: Theme.of(context).textTheme.labelLarge!.copyWith(
                   color: Theme.of(context).colorScheme.onPrimaryContainer,
                 ),
           ),
@@ -51,13 +51,14 @@ class CustomCounterContainer extends ConsumerWidget {
                 ),
                 icon: Icon(
                   Icons.add,
+                  size: 20,
                   color: Theme.of(context).colorScheme.background,
                 ),
               ),
               const SizedBox(width: 10),
               Text(
                 "${ref.watch(counterProvider)[name]}",
-                style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                style: Theme.of(context).textTheme.labelLarge!.copyWith(
                       color: Theme.of(context).colorScheme.onPrimaryContainer,
                     ),
               ),
@@ -81,6 +82,7 @@ class CustomCounterContainer extends ConsumerWidget {
                 ),
                 icon: Icon(
                   CupertinoIcons.minus,
+                  size: 20,
                   color: Theme.of(context).colorScheme.background,
                 ),
               ),
