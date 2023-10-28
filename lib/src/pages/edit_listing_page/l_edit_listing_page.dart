@@ -127,7 +127,9 @@ class _EditListingPageState extends ConsumerState<EditListingPage> {
                           const SizedBox(height: 15),
                           const PropertyFeatures(),
                           const SizedBox(height: 15),
-                          const TotalRooms()
+                          const TotalRooms(),
+                          const SizedBox(height: 15),
+                          const EnvironmentFacilities(),
                         ],
                       ),
                     ),

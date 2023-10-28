@@ -13,7 +13,14 @@ enum ToggleNames {
   lessFour("< 4"),
   four("4"),
   six("6"),
-  moreSix(">6");
+  moreSix(">6"),
+  parkingLot("Parking Lot"),
+  petAllowed("Pet Allowed"),
+  garden("Garden"),
+  gym("Gym"),
+  park("Park"),
+  homeTheatre("Home theatre"),
+  kidsFriendly("Kid's Friendly");
 
   final String name;
 
@@ -36,6 +43,13 @@ class ToggleStateNotifier extends StateNotifier<Map<ToggleNames, bool>> {
           ToggleNames.four: false,
           ToggleNames.six: false,
           ToggleNames.moreSix: false,
+          ToggleNames.parkingLot: false,
+          ToggleNames.petAllowed: false,
+          ToggleNames.garden: false,
+          ToggleNames.gym: false,
+          ToggleNames.park: false,
+          ToggleNames.homeTheatre: false,
+          ToggleNames.kidsFriendly: false,
         });
 
   void setToggleState(ToggleNames name, bool status) {

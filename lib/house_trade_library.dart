@@ -53,7 +53,7 @@ export 'package:house_trade/src/pages/edit_listing_page/widget/l_rent_price.dart
 export 'package:house_trade/src/pages/edit_listing_page/widget/l_custom_counter_container.dart';
 export 'package:house_trade/src/pages/edit_listing_page/widget/l_property_features.dart';
 export 'package:house_trade/src/pages/edit_listing_page/widget/l_total_rooms.dart';
-
+export 'package:house_trade/src/pages/edit_listing_page/widget/l_environment_facilities.dart';
 //provider
 export 'package:house_trade/src/provider/profile_state_notifier.dart';
 export 'package:house_trade/src/provider/star_state_notifier.dart';
